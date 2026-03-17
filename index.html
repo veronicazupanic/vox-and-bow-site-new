@@ -6,35 +6,108 @@
   <title>Vox &amp; Bow</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       background: #fff;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
     }
-    img {
-      max-width: 320px;
-      width: 90%;
+
+    .center {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .center img {
+      width: 280px;
       height: auto;
     }
+
     .bio {
       position: fixed;
       top: 36px;
       left: 32px;
       max-width: 260px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
       font-size: 0.78rem;
       line-height: 1.7;
       color: #555;
       transform: rotate(-1.5deg);
     }
+
+    .video {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 300px;
+      transform: rotate(1.2deg);
+    }
+
+    .video iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #888;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+    }
+
+    a:hover { color: #111; }
+
+    .link-instagram {
+      position: fixed;
+      top: 50%;
+      right: 28px;
+      transform: translateY(-50%) rotate(90deg);
+      transform-origin: center center;
+    }
+
+    .link-youtube {
+      position: fixed;
+      bottom: 52px;
+      left: 44px;
+      transform: rotate(-3deg);
+    }
+
+    .link-email {
+      position: fixed;
+      top: 28px;
+      right: 120px;
+      transform: rotate(2deg);
+    }
   </style>
 </head>
 <body>
+
   <p class="bio">vox &amp; bow is a toronto-based duo composed of vocalist lindsay mcintyre and violinist veronica zupanic focused on cutting edge contemporary and classical performance</p>
-  <img src="logo.jpeg" alt="Vox &amp; Bow">
+
+  <div class="center">
+    <img src="logo.jpeg" alt="Vox &amp; Bow">
+  </div>
+
+  <a class="link-instagram" href="https://www.instagram.com/voxandbow/" target="_blank" rel="noopener">instagram</a>
+  <a class="link-youtube" href="https://www.youtube.com/@voxandbow" target="_blank" rel="noopener">youtube</a>
+  <a class="link-email" href="mailto:voxandbow@gmail.com">voxandbow@gmail.com</a>
+
+  <div class="video">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/kukgkaB9WzA?rel=0"
+      title="Vox &amp; Bow"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
 </body>
 </html>
