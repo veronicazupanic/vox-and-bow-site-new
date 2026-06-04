@@ -86,6 +86,119 @@
       right: 120px;
       transform: rotate(2deg);
     }
+
+    @media (max-width: 768px) {
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 2rem 0 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .link-email {
+        position: relative;
+        top: auto;
+        right: auto;
+        order: 1;
+        width: 100%;
+        margin: 0 0 1.25rem;
+        text-align: center;
+        transform: rotate(1deg);
+      }
+
+      .bio {
+        position: relative;
+        top: auto;
+        left: auto;
+        order: 2;
+        width: 80vw;
+        max-width: 420px;
+        margin: 0 auto;
+        font-size: 0.8rem;
+        line-height: 1.55;
+      }
+
+      .center {
+        position: relative;
+        top: auto;
+        left: auto;
+        order: 3;
+        transform: none;
+        margin: 7rem auto 3.5rem;
+      }
+
+      .center img {
+        width: min(46vw, 220px);
+      }
+
+      .link-instagram {
+        position: relative;
+        top: auto;
+        right: auto;
+        order: 4;
+        align-self: flex-end;
+        margin: -1.5rem 1rem 3rem 0;
+        writing-mode: vertical-rl;
+        transform: none;
+      }
+
+      .video {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        order: 5;
+        width: 85vw;
+        max-width: 520px;
+        margin: 0 auto 2rem;
+        transform: rotate(0.8deg);
+      }
+
+      .link-youtube {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        order: 6;
+        align-self: flex-start;
+        margin: 0 0 0 2rem;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding-top: 1.75rem;
+      }
+
+      .bio {
+        width: min(72vw, 300px);
+      }
+
+      .center {
+        margin: 5.5rem auto 3rem;
+      }
+
+      .center img {
+        width: min(54vw, 205px);
+      }
+
+      .link-instagram {
+        align-self: center;
+        margin: -1rem auto 2.75rem;
+        writing-mode: horizontal-tb;
+      }
+
+      .video {
+        width: 78vw;
+        max-width: 340px;
+        margin-bottom: 1.75rem;
+      }
+
+      .link-youtube {
+        margin-left: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
