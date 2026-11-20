@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vox &amp; Bow</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -212,12 +213,36 @@
 
   <div class="video">
     <iframe
+      id="featured-video"
       src="https://www.youtube-nocookie.com/embed/kukgkaB9WzA?rel=0"
       title="Vox &amp; Bow"
+      referrerpolicy="strict-origin-when-cross-origin"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
+
+  <script>
+    const videoIds = ['kukgkaB9WzA', '_ACsFzL5WL8', 'ax0OxTkV7IY', 'eXkXOPSMZhs', 'gr8Pd7WadWo'];
+    const storageKey = 'voxAndBowLastVideo';
+    let lastVideo;
+
+    try {
+      lastVideo = sessionStorage.getItem(storageKey);
+    } catch (error) {
+      // Storage may be blocked by browser settings.
+    }
+
+    const choices = videoIds.filter(id => id !== lastVideo);
+    const selectedVideo = choices[Math.floor(Math.random() * choices.length)];
+    document.getElementById('featured-video').src = `https://www.youtube-nocookie.com/embed/${selectedVideo}?rel=0`;
+
+    try {
+      sessionStorage.setItem(storageKey, selectedVideo);
+    } catch (error) {
+      // Random selection still works when storage is unavailable.
+    }
+  </script>
 
 </body>
 </html>
